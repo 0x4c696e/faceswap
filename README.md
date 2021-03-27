@@ -85,38 +85,44 @@ Check out [USAGE.md](USAGE.md) for more detailed instructions.
 ## Extract/提取
 From your setup folder, run `python faceswap.py extract`. This will take photos from `src` folder and extract faces into `extract` folder.
 
-从你的setup文件夹中，运行“python faceswap.py extract”。这将从“src”文件夹中获取照片并提取出面部保存到“extract”文件夹中。
+从你的setup文件夹中，运行“python faceswap.py extract”命令。这将从“src”文件夹中获取照片并提取出面部保存到“extract”文件夹中。
 
 ## Train/训练
 From your setup folder, run `python faceswap.py train`. This will take photos from two folders containing pictures of both faces and train a model that will be saved inside the `models` folder.
 
-从你的setup文件夹中，运行“python faceswap.py train”。这将从获取照片并提取出面部保存到“extract”文件夹中。
+从你的setup文件夹中，运行“python faceswap.py train”命令。这将从两个都包含脸部的文件夹中获取照片并训练出一个模型保存在“models”文件夹中。
 
 ## Convert/转换
 From your setup folder, run `python faceswap.py convert`. This will take photos from `original` folder and apply new faces into `modified` folder.
 
+从你的setup文件夹中，运行“python faceswap.py convert”命令。这将从original文件夹中获取照片然后应用新的脸部保存到“modified”文件夹中。
+
 ## GUI/图形界面
 Alternatively, you can run the GUI by running `python faceswap.py gui`
 
-# General notes:
+相似的，你也可以通过“python faceswap.py gui”命令来运行图形界面（GUI）。
+
+# General notes:/通常提示
 - All of the scripts mentioned have `-h`/`--help` options with arguments that they will accept. You're smart, you can figure out how this works, right?!
+- 所有提到带有-h/--help选项的脚本都可以接受这个参数。你很聪明，你能找到这是怎么运作的，对吧？！
 
 NB: there is a conversion tool for video. This can be accessed by running `python tools.py effmpeg -h`. Alternatively, you can use [ffmpeg](https://www.ffmpeg.org) to convert video into photos, process images, and convert images back to the video.
 
+NB：有一个专为视频准备的转化工具。可以通过运行“python tools.py effmpeg -h”命令来访问。相似的，你也可以使用 [ffmpeg](https://www.ffmpeg.org) 转化视频到照片，然后处理图像，然后再把图像转换回视频。
 
-**Some tips:**
+**Some tips:/一些提示**
 
-Reusing existing models will train much faster than starting from nothing.
-If there is not enough training data, start with someone who looks similar, then switch the data.
+Reusing existing models will train much faster than starting from nothing./重复使用已经存在的模型来训练比什么都没有就开始训练速度快很多。
+If there is not enough training data, start with someone who looks similar, then switch the data./如果没有足够的训练数据，从找一个相似的面孔开始，然后再切换数据。
 
-# Help I need support!
-## Discord Server
+# Help I need support!/我需要帮助！
+## Discord Server/discord频道
 Your best bet is to join the [FaceSwap Discord server](https://discord.gg/FC54sYg) where there are plenty of users willing to help. Please note that, like this repo, this is a SFW Server!
 
-## FaceSwap Forum
+## FaceSwap Forum/faceswap论坛
 Alternatively, you can post questions in the [FaceSwap Forum](https://faceswap.dev/forum). Please do not post general support questions in this repo as they are liable to be deleted without response.
 
-# Donate
+# Donate/捐赠
 The developers work tirelessly to improve and develop FaceSwap. Many hours have been put in to provide the software as it is today, but this is an extremely time-consuming process with no financial reward. If you enjoy using the software, please consider donating to the devs, so they can spend more time implementing improvements.
 
 ## Patreon
