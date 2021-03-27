@@ -85,10 +85,12 @@ Check out [USAGE.md](USAGE.md) for more detailed instructions.
 ## Extract/提取
 From your setup folder, run `python faceswap.py extract`. This will take photos from `src` folder and extract faces into `extract` folder.
 
-从你的setup文件夹
+从你的setup文件夹中，运行“python faceswap.py extract”。这将从“src”文件夹中获取照片并提取出面部保存到“extract”文件夹中。
 
 ## Train/训练
 From your setup folder, run `python faceswap.py train`. This will take photos from two folders containing pictures of both faces and train a model that will be saved inside the `models` folder.
+
+从你的setup文件夹中，运行“python faceswap.py train”。这将从获取照片并提取出面部保存到“extract”文件夹中。
 
 ## Convert/转换
 From your setup folder, run `python faceswap.py convert`. This will take photos from `original` folder and apply new faces into `modified` folder.
