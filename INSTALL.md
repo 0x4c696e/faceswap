@@ -1,56 +1,60 @@
-# Installing faceswap
-- [Installing faceswap](#installing-faceswap)
-- [Prerequisites](#prerequisites)
-  - [Hardware Requirements](#hardware-requirements)
-  - [Supported operating systems](#supported-operating-systems)
-- [Important before you proceed](#important-before-you-proceed)
-- [Linux and Windows Install Guide](#linux-and-windows-install-guide)
-  - [Installer](#installer)
-  - [Manual Install](#manual-install)
-  - [Prerequisites](#prerequisites-1)
+# Installing faceswap/安装faceswap
+- [Installing faceswap](#installing-faceswap)安装faceswap
+- [Prerequisites](#prerequisites)准备工作
+  - [Hardware Requirements](#hardware-requirements)硬件要求
+  - [Supported operating systems](#supported-operating-systems)支持的操作系统
+- [Important before you proceed](#important-before-you-proceed)在继续前的重要事项
+- [Linux and Windows Install Guide](#linux-and-windows-install-guide)LINUX和windows安装指导
+  - [Installer](#installer)安装包
+  - [Manual Install](#manual-install)手动安装
+  - [Prerequisites](#prerequisites-1)准备
     - [Anaconda](#anaconda)
     - [Git](#git)
-  - [Setup](#setup)
+  - [Setup](#setup)设置
     - [Anaconda](#anaconda-1)
-      - [Set up a virtual environment](#set-up-a-virtual-environment)
-      - [Entering your virtual environment](#entering-your-virtual-environment)
+      - [Set up a virtual environment](#set-up-a-virtual-environment)设置一个虚拟环境
+      - [Entering your virtual environment](#entering-your-virtual-environment)进入虚拟环境
     - [faceswap](#faceswap)
-      - [Easy install](#easy-install)
-      - [Manual install](#manual-install-1)
-  - [Running faceswap](#running-faceswap)
-  - [Create a desktop shortcut](#create-a-desktop-shortcut)
-  - [Updating faceswap](#updating-faceswap)
-- [General Install Guide](#general-install-guide)
-  - [Installing dependencies](#installing-dependencies)
+      - [Easy install](#easy-install)简易安装
+      - [Manual install](#manual-install-1)手动安装
+  - [Running faceswap](#running-faceswap)运行faceswap
+  - [Create a desktop shortcut](#create-a-desktop-shortcut)创建桌面快捷方式
+  - [Updating faceswap](#updating-faceswap)更新faceswap
+- [General Install Guide](#general-install-guide)通用安装指导
+  - [Installing dependencies](#installing-dependencies)安装依赖
     - [Git](#git-1)
     - [Python](#python)
     - [Virtual Environment](#virtual-environment)
-  - [Getting the faceswap code](#getting-the-faceswap-code)
-  - [Setup](#setup-1)
-    - [About some of the options](#about-some-of-the-options)
-  - [Run the project](#run-the-project)
+  - [Getting the faceswap code](#getting-the-faceswap-code)获取faceswap代码
+  - [Setup](#setup-1)设置
+    - [About some of the options](#about-some-of-the-options)关于一些选项
+  - [Run the project](#run-the-project)运行项目
   - [Notes](#notes)
 
-# Prerequisites
+# Prerequisites/准备工作
 Machine learning essentially involves a ton of trial and error. You're letting a program try millions of different settings to land on an algorithm that sort of does what you want it to do. This process is really really slow unless you have the hardware required to speed this up. 
+
+机器学习基本上需要成千上万次的训练和出错。你要让一个程序尝试一个你想要用来做什么的算法的几百万个不同的选项。这个过程真的会非常慢，除非你有要求的硬件来为这个过程加速。
 
 The type of computations that the process does are well suited for graphics cards, rather than regular processors. **It is pretty much required that you run the training process on a desktop or server capable GPU.** Running this on your CPU means it can take weeks to train your model, compared to several hours on a GPU.
 
-## Hardware Requirements
-**TL;DR: you need at least one of the following:**
+这个类型的计算需要不错的图形卡（显卡），而不是常规的CPU。这非常需要你在桌面平台或者好的服务器GPU上运行训练程序。运行在你的CPU上意味着它将花费数周的时间，而GPU相比之下只要花费几个小时。
 
-- **A powerful CPU**
-    - Laptop CPUs can often run the software, but will not be fast enough to train at reasonable speeds
-- **A powerful GPU**
-    - Currently, Nvidia GPUs are fully supported. and AMD graphics cards are partially supported through plaidML.
+## Hardware Requirements
+**TL;DR: you need at least one of the following:/你至少需要以下的其中一个**
+
+- **A powerful CPU/一个强大的CPU**
+    - Laptop CPUs can often run the software, but will not be fast enough to train at reasonable speeds/笔记本的CPU可以运行软件，但对训练来说不能达到合理的速度
+- **A powerful GPU/一个强大的GPU**
+    - Currently, Nvidia GPUs are fully supported. and AMD graphics cards are partially supported through plaidML./目前，英伟达的GPU已经全面支持了，并且AMD的图形卡通过plaidML得到了部分支持。
     - If using an Nvidia GPU, then it needs to support at least CUDA Compute Capability 3.5. (Release 1.0 will work on Compute Capability 3.0)
-      To see which version your GPU supports, consult this list: https://developer.nvidia.com/cuda-gpus
-      Desktop cards later than the 7xx series are most likely supported.
-- **A lot of patience**
+      To see which version your GPU supports, consult this list: https://developer.nvidia.com/cuda-gpus /如果使用的是英伟达GPU，那么它需要支持至少CUDA计算能力3.5
+      Desktop cards later than the 7xx series are most likely supported./在7代以后的系列桌面显卡大多数都已经支持了。
+- **A lot of patience/大量的耐心**
 
 ## Supported operating systems
 - **Windows 10**
-  Windows 7 and 8 might work. Your mileage may vary. Windows has an installer which will set up everything you need. See: https://github.com/deepfakes/faceswap/releases
+  Windows 7 and 8 might work. Your mileage may vary. Windows has an installer which will set up everything you need. See: https://github.com/deepfakes/faceswap/releases /windows7和8可能可以工作。你的安装时间可能因机器而异。widnows有一个将会设置好你需要的一切的安装程序。请看 https://github.com/deepfakes/faceswap/releases
 - **Linux**
   Most Ubuntu/Debian or CentOS based Linux distributions will work.
 - **macOS**
@@ -59,47 +63,63 @@ The type of computations that the process does are well suited for graphics card
 
 Alternatively, there is a docker image that is based on Debian.
 
-# Important before you proceed
+# Important before you proceed/在你继续之前的重要事项
 **In its current iteration, the project relies heavily on the use of the command line, although a gui is available. if you are unfamiliar with command line tools, you may have difficulty setting up the environment and should perhaps not attempt any of the steps described in this guide.** This guide assumes you have intermediate knowledge of the command line. 
+
+在当前的阶段，这个项目重度依赖命令行的使用，尽管提供了图形界面。如果你对命令行不熟悉的话，可能设置环境会困难一些并且应该不要去尝试在这个指导中描述的任意步骤。这个指导假设你已经有了中等的命令行知识。
 
 The developers are also not responsible for any damage you might cause to your own computer.
 
-# Linux and Windows Install Guide
+开发者也不会对你可能会对你电脑造成的任何损害负责。
 
-## Installer
+# Linux and Windows Install Guide/Linux和windows安装指导
+
+## Installer/安装包
 Windows and Linux now both have an installer which installs everything for you and creates a desktop shortcut to launch straight into the GUI. You can download the installer from https://github.com/deepfakes/faceswap/releases.
+
+windows和linux都提供了一个安装全部你要创建的安装包并且创建了一个桌面快捷方式来直接启动GUI图形界面。你可以从 https://github.com/deepfakes/faceswap/releases中下载对应的安装包。
 
 If you have issues with the installer then read on for the more manual way to install faceswap on Windows.
 
-## Manual Install
+如果你在安装过程中出现了问题，请接着阅读在windows上手动安装faceswap。
+
+## Manual Install/手动安装
 
 Setting up faceswap can seem a little intimidating to new users, but it isn't that complicated, although a little time consuming. It is recommended to use Linux where possible as Windows will hog about 20% of your GPU Memory, making faceswap run a little slower, however using Windows is perfectly fine and 100% supported.
 
-## Prerequisites
+设置faceswap似乎对新用户来说有一点恐惧，但其实不是那么复杂，虽然会多花费一些时间，推荐使用linux，因为可能比windows节省20%的GPU内存，后者让faceswap运行的更慢，然而使用windows也完全可以并且100%支持。
+
+## Prerequisites/准备工作
 
 ### Anaconda
 Download and install the latest Python 3 Anaconda from: https://www.anaconda.com/download/. Unless you know what you are doing, you can leave all the options at default.
 
+下载并安装最新的anaconda。安装时你可以让所有选项都默认，除非你知道你在做什么，
+
 ### Git
 Download and install Git for Windows: https://git-scm.com/download/win. Unless you know what you are doing, you can leave all the options at default.
 
-## Setup
+下载并安装git。安装时你可以让所有选项都默认，除非你知道你在做什么，
+
+## Setup/设置
 Reboot your PC, so that everything you have just installed gets registered.
 
+重启你的电脑，为了你刚才安装的一切都已经注册。
+
 ### Anaconda
-#### Set up a virtual environment
-- Open up Anaconda Navigator
-- Select "Environments" on the left hand side
-- Select "Create" at the bottom
-- In the pop up:
-    - Give it the name: faceswap
-    - **IMPORTANT**: Select python version 3.8
-    - Hit "Create" (NB: This may take a while as it will need to download Python)
+#### Set up a virtual environment/设置虚拟环境
+- Open up Anaconda Navigator/打开anaconda navigator
+- Select "Environments" on the left hand side/在左手边选择“environments‘
+- Select "Create" at the bottom/在下面选择“create”
+- In the pop up:/在弹出窗口
+    - Give it the name: faceswap/给它起个名字
+    - **IMPORTANT**: Select python version 3.8/选择python版本3.8
+    - Hit "Create" (NB: This may take a while as it will need to download Python)/点击创建
 ![Anaconda virtual env setup](https://i.imgur.com/CLIDDfa.png)
 
-#### Entering your virtual environment
-To enter the virtual environment:
-- Open up Anaconda Navigator
+#### Entering your virtual environment/进入你的虚拟环境
+To enter the virtual environment:/为了进入虚拟环境
+- # Open up Anaconda Navigator
 - Select "Environments" on the left hand side
 - Hit the ">" arrow next to your faceswap environment and select "Open Terminal"
 ![Anaconda enter virtual env](https://i.imgur.com/rKSq2Pd.png)
@@ -154,7 +174,7 @@ Obtain git for your distribution from the [git website](https://git-scm.com/down
 ### Python
 The recommended install method is to use a Conda3 Environment as this will handle the installation of Nvidia's CUDA and cuDNN straight into your Conda Environment. This is by far the easiest and most reliable way to setup the project.
   - MiniConda3 is recommended: [MiniConda3](https://docs.conda.io/en/latest/miniconda.html)
-  
+
 Alternatively you can install Python (>= 3.7-3.8 64-bit) for your distribution (links below.) If you go down this route and are using an Nvidia GPU you should install CUDA (https://developer.nvidia.com/cuda-zone) and cuDNN (https://developer.nvidia.com/cudnn). for your system. If you do not plan to build Tensorflow yourself, make sure you install the correct Cuda and cuDNN package for the currently installed version of Tensorflow (Current release: Tensorflow 2.2. Release v1.0: Tensorflow 1.15). You can check for the compatible versions here: (https://www.tensorflow.org/install/source#gpu).
   - Python distributions:
     - apt/yum install python3 (Linux)
