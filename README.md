@@ -22,7 +22,7 @@ Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
 在开始之前请确保你查看过[INSTALL.md](INSTALL.md)安装文档。
 
 - [deepfakes_faceswap](#deepfakesfaceswap)
-- [Manifesto](#manifesto)/宣言
+- [Manifesto](#manifesto)/声明
   - [FaceSwap has ethical uses.](#faceswap-has-ethical-uses)
 - [How To setup and run the project](#how-to-setup-and-run-the-project)/怎么设置并运行项目
 - [Overview](#overview)/总览
@@ -54,9 +54,9 @@ Make sure you check out [INSTALL.md](INSTALL.md) before getting started.
 - [About machine learning](#about-machine-learning)
   - [How does a computer know how to recognize/shape faces? How does machine learning work? What is a neural network?](#how-does-a-computer-know-how-to-recognizeshape-faces-how-does-machine-learning-work-what-is-a-neural-network)
 
-# Manifesto/宣言
+# Manifesto/声明
 
-## FaceSwap has ethical uses./FaceSwap使用道德标准，也就是免责。此处略去不表
+## FaceSwap has ethical uses./FaceSwap使用道德标准，也就是什么可以做，什么不能做。此处略去不表
 
 
 
