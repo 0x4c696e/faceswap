@@ -119,22 +119,22 @@ Reboot your PC, so that everything you have just installed gets registered.
 
 #### Entering your virtual environment/进入你的虚拟环境
 To enter the virtual environment:/为了进入虚拟环境
-- # Open up Anaconda Navigator
-- Select "Environments" on the left hand side
-- Hit the ">" arrow next to your faceswap environment and select "Open Terminal"
+- # Open up Anaconda Navigator/打开anaconda navigator
+- Select "Environments" on the left hand side/在左手边选择“environments”
+- Hit the ">" arrow next to your faceswap environment and select "Open Terminal"/点击在你的faceswap环境旁的”>“箭头然后选择”open terminal“
 ![Anaconda enter virtual env](https://i.imgur.com/rKSq2Pd.png)
 
 ### faceswap
-- If you are not already in your virtual environment follow [these steps](#entering-your-virtual-environment)
-- Get the faceswap repo by typing: `git clone --depth 1 https://github.com/deepfakes/faceswap.git`
-- Enter the faceswap folder: `cd faceswap`
+- If you are not already in your virtual environment follow [these steps](#entering-your-virtual-environment)/如果你没有设置虚拟环境请跟随[these steps](#entering-your-virtual-environment)这些步骤
+- Get the faceswap repo by typing: `git clone --depth 1 https://github.com/deepfakes/faceswap.git`/通过键入”git clone --depth 1 https://github.com/deepfakes/faceswap.git“ 来获取faceswap的仓库
+- Enter the faceswap folder: `cd faceswap`/进入faceswap的文件夹”cd faceswap“
 
-#### Easy install
-- Enter the command `python setup.py` and follow the prompts:
-- If you have issues/errors follow the Manual install steps below.
+#### Easy install/简易安装方法
+- Enter the command `python setup.py` and follow the prompts:/输入命令”python setup.py“然后跟随提示
+- If you have issues/errors follow the Manual install steps below./如果产生了问题或错误请跟随下面的手动安装步骤
 
-#### Manual install
-Do not follow these steps if the Easy Install above completed succesfully.
+#### Manual install/手动安装
+Do not follow these steps if the Easy Install above completed succesfully./如果上面的简易安装成功安装了就不要跟随这些步骤了
 If you are using an Nvidia card make sure you have the correct versions of Cuda/cuDNN installed for the required version of Tensorflow
 - Install tkinter (required for the GUI) by typing: `conda install tk`
 - Install requirements:
